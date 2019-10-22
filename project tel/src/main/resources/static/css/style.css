@@ -1,0 +1,27 @@
+h1 {
+    color:#0000FF;
+}
+
+h2 {
+    color:#FF0000;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 5px;
+}
+.person{
+    border: 1px solid darkgray;
+    margin-bottom: 1px;
+    width: 25%;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.person p{
+    font-size: 16px;
+    color: #5db6ff;
+}

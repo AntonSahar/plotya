@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Диалоги</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="/getrequest.js"></script>
+</head>
+<body>
+<div>
+    <div class="getAllMessages" th:each="person,state : ${persons}" style="border: 1px solid indigo">
+        <h5 th:text="${person.getFirstName()} + ' ' + ${person.getLastName()}">...</h5>
+
+        <div th:each="message : ${messages}"
+             th:if="${message.getTo().equals(person.getId()) || message.getFrom().equals(person.getId())}">
+            <p th:text="${message.getMessage()}">...</p>
+            <p th:text="${message.getDateString()}">...</p>
+        </div>
+    </div>
+    <div id="getResultDiv">
+        <ul>
+
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
